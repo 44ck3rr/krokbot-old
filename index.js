@@ -48,4 +48,4 @@ client.on('message', message => {
 
 client.on('error', (error) => console.error());
 
-client.login('process.env.TOKEN')
+client.login(process.env.TOKEN)
