@@ -1,30 +1,50 @@
-const Discord = require ('discord.js');
-const fs = require ('fs');
-const client = new Discord.Client();
-client.commands = new Discord.Collection();
+const Discord = require('discord.js');
+const ytdl = require('ytdl-core');
 
-//Dossier Events
-fs.readdir('./Events/', (error, f) => {
-    if (error) { return console.error(error); }
-    console.log(`${f.length} events chargés`);
+const client = new Discord.Client;
 
-    f.forEach((f) => {
-        let events = require(`./Events/${f}`);
-        let event = f.split('.')[0];
-        client.on(event, events.bind(null, client));
-    });
-});
+const prefix = '=';
 
-//Dossier Commandes
-fs.readdir('./Commandes/', (error, f) => {
-    if (error) { return console.error(error); }
-        let commandes = f.filter(f => f.split('.').pop() === 'js');
-        if (commandes.length <= 0) { return console.log('Aucune commande trouvée !'); }
+client.once('ready', () => {
+    console.log(`Connecté en tant que ${client.user.tag} - (${client.user.id})`);
+})
 
-        commandes.forEach((f) => {
-            let commande = require(`./Commandes/${f}`);
-            console.log(`${f} commande chargée !`);
-            client.commands.set(commande.help.name, commande);
-        });
-});
+client.on('message', message => {
+    if(message.content.startsWith(prefix + 'play')){
+        if(message.member.voice.channel){
+            if(message.member.voice.channel.id = ('657697993423716355')){
+                message.member.voice.channel.join().then(connection => {
+                    let args = message.content.split(' ');
+
+                    if(!args[1]){
+                        message.reply('Url invalide')
+                  }
+                  else {
+
+                  let dispatcher = connection.play(ytdl(args[1], { quality: "highestaudio" }));
+
+                 dispatcher.on('finish', () => {
+                     dispatcher.destroy();
+                 })
+
+                 dispatcher.on('error', err => {
+                      console.log('Erreur de dispatcher : ' + err);
+                  })
+                  }
+               }).catch(err => {
+                 message.reply('Erreur lors de la connexion : ' + err);
+                 })
+            }
+            else {
+                message.reply("Vous n'êtes pas dans le salon vocal 🎶・Music")
+            }   
+        }
+
+        else {
+            message.reply("Vous n'êtes pas connecté en vocal");
+        }
+    }
+})
+
+client.on('error', (error) => console.error());
 client.login(process.env.TOKEN)
