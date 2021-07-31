@@ -43,7 +43,7 @@ client.on('ready', async () => {
     setInterval(() => {
         const [bots, humans] = client.guilds.cache.first().members.cache.partition(member => member.user.bot)
         client.channels.cache.get(config.serverStats.humans).setName(`🥴・Autistes : ${humans.size}`)
-        client.channels.cache.get(config.serverStats.humans).setName(`🤖・Bots : ${bots.size}`)
+        client.channels.cache.get(config.serverStats.bots).setName(`🤖・Bots : ${bots.size}`)
     }, 3e4)
 })
 
