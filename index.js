@@ -1,26 +1,12 @@
 const Discord = require('discord.js');
-const ytdl = require('ytdl-core');
-
 const client = new Discord.Client({
     fetchAllMembers: true
 }),
 config = require('./config.json')
 fs = require('fs')
 
-const prefix = '.';
-
 client.once('ready', () => {
     console.log(`Connecté en tant que ${client.user.tag} - (${client.user.id})`);
-    
-    const status = [
-        'Dev by: 4_4ck3r',
-        '꒰⑅•ᴗ•⑅꒱'
-    ]
-    let i = 0
-    setInterval(() => {
-        client.user.setActivity(status[i], {type: 'PLAYING'})
-        i = ++i % status.length
-    }, 400)
 })
 
 client.login(process.env.TOKEN);
@@ -45,4 +31,13 @@ client.on('message', message => {
     const command = client.commands.get(commandName.slice(config.prefix.length))
     if (!command) return
     command.run(message, args, client)
+})
+
+client.on('guildMemberAdd', member => {
+    member.guild.channels.cache.get(config.greeting.joinChannel).send(`**${member} a rejoint notre Taverne ! 🥴**\n**Nous somme maintenant ${member.guild.memberCount} Autistes dans notre Taverne** 🍻`)
+    member.roles.add(config.greeting.joinRole)
+})
+
+client.on('guildMemberRemove', member => {
+    member.guild.channels.cache.get(config.greeting.leaveChannel).send(`**${member.user.tag} a quitté notre Taverne 😭**\n**Ce n'est plus un Autiste ! 😥**\nNous somme maintenant ${member.guild.memberCount} Autistes dans notre Taverne ! 🍺**`)
 })
