@@ -9,20 +9,13 @@ client.once('ready', () => {
     console.log(`Connecté en tant que ${client.user.tag} - (${client.user.id})`);
     
     const status = [
-        '_',
-        'B_',
-        'Bo_',
-        'Bon_',
-        'Bonj_',
-        'Bonjo_',
-        'Bonjou_',
-        'Bonjour_',
-        'Bonjour _',
-        'Bonjour !',
+        '.'
+        '.h',
+        '.he',
+        '.hel',
+        '.help',
         '꒰⑅•ᴗ•⑅꒱',
-        'Bonjour !',
-        '꒰⑅•ᴗ•⑅꒱',
-        'Bonjour !',
+        '.help',
         '꒰⑅•ᴗ•⑅꒱'
     ]
     let i = 0
