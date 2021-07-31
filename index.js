@@ -18,12 +18,13 @@ client.once('ready', () => {
     ]
     let i = 0
     setInterval(() => {
-        client.user.setActivity(status[i], {type: 'STREAMING', url: 'https://twitch.tv/NyanCat'})
+        client.user.setActivity(status[i], {type: 'PLAYING'})
         i = ++i % status.length
     }, 400)
 })
 
 client.login(process.env.TOKEN);
+
 client.commands = new Discord.Collection()
 
 fs.readdir('./commands', (err, files) => {
