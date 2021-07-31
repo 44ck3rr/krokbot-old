@@ -30,6 +30,7 @@ client.on('message', message => {
     if (!commandName.startsWith(config.prefix)) return
     const command = client.commands.get(commandName.slice(config.prefix.length))
     if (!command) return
+    if (command.guildOnly && !message.guild) return message.channel.send('**Cette commande ne peut être utilisé que dans notre Taverne !**')
     command.run(message, args, client)
 })
 
