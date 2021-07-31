@@ -1,9 +1,10 @@
 const Discord = require('discord.js');
 const client = new Discord.Client({
     fetchAllMembers: true
-}),
-config = require('./config.json')
-fs = require('fs')
+})
+
+const config = require('./config.json')
+const fs = require('fs')
 
 client.once('ready', () => {
     console.log(`Connecté en tant que ${client.user.tag} - (${client.user.id})`);
@@ -17,7 +18,7 @@ fs.readdir('./commands', (err, files) => {
     if (err) throw err
     files.forEach(file => {
         if (!file.endsWith('.js')) return
-        const command = require(`./commands/${files}`)
+        const command = require(`./commands/${file}`)
         client.commands.set(command.name, command)
     })
 })
