@@ -1,35 +1,45 @@
 const Discord = require('discord.js');
-const client = new Discord.Client({
-    fetchAllMembers: true
-})
-
+const client = new Discord.Client()
 const config = require('./config.json')
+const prefix = config.prefix
 const fs = require('fs')
 
-client.once('ready', () => {
-    console.log(`Connecté en tant que ${client.user.tag} - (${client.user.id})`);
-})
+client.commands = new Discord.Collection();
 
-client.login(process.env.TOKEN);
+fs.readdir('./commands/', (err, files ) => {
+    if(err) console.log(err);
+    let jsfile = files.filter(f => f.split(".").pop() === 'js');
+    if(jsfile.length <= 0) {
+        console.log('Aucune commande n\'a été trouvée dans le Handler')
+    }
 
-client.commands = new Discord.Collection()
-
-fs.readdir('./commands', (err, files) => {
-    if (err) throw err
-    files.forEach(file => {
-        if (!file.endsWith('.js')) return
-        const command = require(`./commands/${file}`)
-        client.commands.set(command.name, command)
+    jsfile.forEach((f, i) => {
+        let props = require(`./commands/${f}`);
+        console.log(`HANDLER: ${f} a été detecter.`)
+        client.commands.set(props.config.name, props)
     })
 })
 
-client.on('message', message => {
-    if (message.type !== 'DEFAULT' || message.author.bot) return
+client.on('message', async message => {
+    let messageArray = message.content.split(" ");
+    let command = messageArray[0];
+    let args = messageArray.splice(1);
 
-    const args = message.content.trim().split(/ +/g)
-    const commandName = args.shift().toLowerCase()
-    if (!commandName.startsWith(config.prefix)) return
-    const command = client.commands.get(commandName.slice(config.prefix.length))
-    if (!command) return
-    command.run(message, args, client)
+    let commandFile = client.commands.get(command.slice(prefix.length))
+    if(commandFile) commandFile.run(client, message, args)
 })
+
+client.on('ready', async () => {
+    console.log(`Connecté en tant que ${client.user.tag} - (${client.user.id})`);
+    let statuses = [
+        'Dev by 4_4ck3r',
+        '.help'
+    ]
+
+    setInterval(function() {
+        let status = statuses[Math.floor(Math.random() * statuses.length)];
+        client.user.setActivity(status, {type: 'STREAMING'})
+    }, 5000)
+})
+
+client.login(process.env.TOKEN);
