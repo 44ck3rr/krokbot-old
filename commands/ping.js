@@ -12,7 +12,7 @@ module.exports.run = async (client, message, args) => {
     .setColor('RANDOM')
     .setTitle('PONG !')
     .setDescription('Voici les résultats.')
-    .addField('Ma latence est de :', Math.floor(msg.createAt - message.createAt)+ " " + "ms")
+    .addField('Ma latence est de :', Math.floor(msg.createdAt - message.createdAt)+ " " + "ms")
     message.channel.send(PING)
 }
 
