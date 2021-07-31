@@ -14,9 +14,9 @@ client.once('ready', () => {
     ]
     let i = 0
     setInterval(() => {
-        client.user.setActivity(status[i], {type: 'STREAMING', url: 'https://twitch.tv/NyanCat'})
+        client.user.setActivity(status[i], {type: 'PLAYING'})
         i = ++i % status.length
-    }, 7500)
+    }, 5000)
 })
 
 client.once('ready', () => {
