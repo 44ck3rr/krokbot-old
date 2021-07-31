@@ -9,7 +9,7 @@ client.once('ready', () => {
     console.log(`Connecté en tant que ${client.user.tag} - (${client.user.id})`);
     
     const status = [
-        '.'
+        '.',
         '.h',
         '.he',
         '.hel',
