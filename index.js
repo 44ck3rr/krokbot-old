@@ -40,6 +40,11 @@ client.on('ready', async () => {
         let status = statuses[Math.floor(Math.random() * statuses.length)];
         client.user.setActivity(status, {type: 'STREAMING'})
     }, 5000)
+    setInterval(() => {
+        const [bots, humans] = client.guilds.cache.first().members.cache.partition(member => member.user.bot)
+        client.channels.cache.get(config.serverStats.humans).setName(`🥴・Autistes : ${humans.size}`)
+        client.channels.cache.get(config.serverStats.humans).setName(`🤖・Bots : ${bots.size}`)
+    }, 3e4)
 })
 
 client.login(process.env.TOKEN);
