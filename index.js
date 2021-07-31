@@ -29,7 +29,7 @@ client.once('ready', () => {
     setInterval(() => {
         client.user.setActivity(status[i], {type: 'STREAMING', url: 'https://twitch.tv/NyanCat'})
         i = ++i % status.length
-    }, 400)
+    }, 800)
 })
 
 client.once('ready', () => {
