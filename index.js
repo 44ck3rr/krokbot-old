@@ -33,12 +33,3 @@ client.on('message', message => {
     if (command.guildOnly && !message.guild) return message.channel.send('**Cette commande ne peut être utilisé que dans notre Taverne !**')
     command.run(message, args, client)
 })
-
-client.on('guildMemberAdd', member => {
-    member.guild.channels.cache.get(config.greeting.joinChannel).send(`**${member} a rejoint notre Taverne ! 🥴**\n**Nous somme maintenant ${member.guild.memberCount} Autistes dans notre Taverne** 🍻`)
-    member.roles.add(config.greeting.joinRole)
-})
-
-client.on('guildMemberRemove', member => {
-    member.guild.channels.cache.get(config.greeting.leaveChannel).send(`**${member.user.tag} a quitté notre Taverne 😭**\n**Ce n'est plus un Autiste ! 😥**\nNous somme maintenant ${member.guild.memberCount} Autistes dans notre Taverne ! 🍺**`)
-})
