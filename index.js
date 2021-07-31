@@ -10,7 +10,7 @@ client.once('ready', () => {
     
     const status = [
         'Dev by: 4_4ck3r',
-        () => `${client.guilds.cache.reduce((acc, guild) => acc + guild.memberCount, 0)} Autistes Total`
+        '꒰⑅•ᴗ•⑅꒱'
     ]
     let i = 0
     setInterval(() => {
