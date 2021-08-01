@@ -9,7 +9,7 @@ module.exports.run = async (client, message, args) => {
     .addField('__Admin Commands__', '.say\n.clear', true)
     .addField('__Other__', 'help\nping\nuser-info\nserver-info', true)
     .setThumbnail(message.guild.iconURL())
-    .setTimestamp('© Tous droits réservés'))
+    .setFooter('© Tous droits réservés'))
 }
 
 module.exports.config = {
