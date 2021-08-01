@@ -21,6 +21,9 @@ fs.readdir('./commands/', (err, files ) => {
 })
 
 client.on('message', async message => {
+
+    if (!message.member.hasPermission('MANAGE_CHANNELS') && client.db.lockedChannels.includes(message.channel.id)) return message.delete()
+
     let messageArray = message.content.split(" ");
     let command = messageArray[0];
     let args = messageArray.splice(1);
@@ -40,11 +43,6 @@ client.on('ready', async () => {
         let status = statuses[Math.floor(Math.random() * statuses.length)];
         client.user.setActivity(status, {type: 'STREAMING'})
     }, 5000)
-    setInterval(() => {
-        const [bots, humans] = client.guilds.cache.first().members.cache.partition(member => member.user.bot)
-        client.channels.cache.get(config.serverStats.humans).setName(`🥴・Autistes : ${humans.size}`)
-        client.channels.cache.get(config.serverStats.bots).setName(`🤖・Bots : ${bots.size}`)
-    }, 3e4)
 })
 
 client.login(process.env.TOKEN);
