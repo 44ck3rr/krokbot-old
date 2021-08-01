@@ -21,9 +21,6 @@ fs.readdir('./commands/', (err, files ) => {
 })
 
 client.on('message', async message => {
-
-    if (!message.member.hasPermission('MANAGE_CHANNELS') && client.db.lockedChannels.includes(message.channel.id)) return message.delete()
-
     let messageArray = message.content.split(" ");
     let command = messageArray[0];
     let args = messageArray.splice(1);
