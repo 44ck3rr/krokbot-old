@@ -8,7 +8,8 @@ module.exports.run = async (client, message, args) => {
     .setDescription('**Prefixe:** .\n**Code Language:** NodeJs\n**Dev by:** 4_4ck3r#4918')
     .addField('__Admin Commands__', '.say\n.clear', true)
     .addField('__Other__', 'help\nping\nuser-info\nserver-info', true)
-    .setThumbnail(message.guild.iconURL()))
+    .setThumbnail(message.guild.iconURL())
+    .setTimestamp('© Tous droits réservés'))
 }
 
 module.exports.config = {
