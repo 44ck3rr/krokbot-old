@@ -48,7 +48,10 @@ client.on('guildMemberAdd', async (member) => {
     .setTitle('Nouvelle Autiste !')
     .setDescription(`Bienvenue ${member.user} dans La Taverne des Autistes ! 🎉`))
 
-    member.roles.add(config.welcomeRoles)
+    member.roles.add('676134492263677992')
+    member.roles.add('869020204238258227')
+    member.roles.add('869241779034132480')
+    member.roles.add('869204736233070612')
 })
 
 client.on('guildMemberRemove', async (member) => {
