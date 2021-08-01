@@ -42,14 +42,14 @@ client.on('ready', async () => {
     }, 5000)
 })
 
-client.on('guildMemberAdd', (member) => {
+client.on('guildMemberAdd', async (member) => {
     let welcomeChannel = client.channels.cache.get('676111418776354866')
     welcomeChannel.send(`Bienvenue, ${member.user} dans La Taverne des Autistes ! 🎉`)
 
     member.roles.add(config.welcomeRoles)
 })
 
-client.on('guildMemberRemove', (member) => {
+client.on('guildMemberRemove', async (member) => {
     let leaveChannel = client.channels.cache.get('676135861078851628')
     leaveChannel.send(`${member.user.tag} a quitté notre taverne 😥, Ce n'est plus un autiste`)
 })
