@@ -6,7 +6,7 @@ module.exports.run = async (client, message, args) => {
     if(message.author.bot) return
     message.delete();
     message.channel.send(new Discord.MessageEmbed()
-    .setTitle(SayEmbed))
+    .setDescription(SayEmbed))
 }
 
 module.exports.config = {
