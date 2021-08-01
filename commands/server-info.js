@@ -9,7 +9,7 @@ module.exports.run = async (client, message, args) => {
     .addField('Emojis', `${message.guild.emojis.cache.size} emojis\n${message.guild.emojis.cache.filter(emoji => !emoji.animated).size} emojis statiques\n${message.guild.emojis.cache.filter(emoji => emoji.animated).size} emojis animés`, true)
     .addField('Rôles', message.guild.roles.cache.size, true)
     .addField('Propriétaire', message.guild.owner, true)
-    .addField('Nitro boost', `Tier : ${message.guild.premiumTier}\nNombre de boosts : ${message.guild.premiumSubscriptionCount}`, true)
+    .addField(':BoostAnim: Nitro boost', `Tier : ${message.guild.premiumTier}\nNombre de boosts : ${message.guild.premiumSubscriptionCount}`, true)
     .setFooter(`ID : ${message.guild.id}`)
     .setThumbnail(message.guild.iconURL())
     .setImage(message.guild.bannerURL()))
