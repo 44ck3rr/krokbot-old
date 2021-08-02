@@ -46,6 +46,7 @@ client.on('guildMemberAdd', async (member) => {
     let welcomeChannel = client.channels.cache.get('676111418776354866')
     welcomeChannel.send(`||${member.user}||`)
     welcomeChannel.message.delete()
+    setInterval(500)
     welcomeChannel.send(new Discord.MessageEmbed()
     .setTitle('Nouvelle Autiste !')
     .setDescription(`Bienvenue ${member.user} dans La Taverne des Autistes ! 🎉`))
