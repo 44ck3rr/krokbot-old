@@ -28,7 +28,7 @@ module.exports.run = async (client, message, args) => {
         .addField('Utilisateur banni', member)
         .addField('Banni par', message.author)
         .addField('Raison', reason)
-        .setFooter('Pour toute erreur de bannissement, contactez @4_4ck3r#4918', client.user.displayAvatarURL())
+        .setFooter('Pour toute erreur de bannissement, contactez 4_4ck3r#4918', client.user.displayAvatarURL())
         .setTimestamp()
 
         message.channel.send(banembed);
