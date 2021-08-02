@@ -32,6 +32,9 @@ module.exports.run = async (client, message, args) => {
         .setTimestamp()
 
         message.channel.send(banembed);
+
+        let modMessage = client.channel.cache.get('857648787090178099')
+        modMessage.send(banembed)
 }
 
 module.exports.config = {
