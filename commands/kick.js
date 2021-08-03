@@ -8,7 +8,7 @@ module.exports.run = async (client, message, args) => {
     if (!user) return
     if (!reason) reason = 'Non-spécifié';
 
-    const kickembed = (new Discord.MessageEmbed()
+    message.channel.send(new Discord.MessageEmbed()
     .setTitle('Membre Exclu')
     .setThumbnail(member.user.displayAvatarURL())
     .addField('Utilisateur exclu', member)
@@ -17,10 +17,15 @@ module.exports.run = async (client, message, args) => {
     .setFooter('Pour toute erreur d\'exclusion, contactez 4_4ck3r#4918', client.user.displayAvatarURL())
     .setTimestamp())
 
-    message.channel.send(kickembed);
-
     let modMessage = client.channels.cache.get('857648787090178099');
-    modMessage.send(kickembed);
+    modMessage.send(new Discord.MessageEmbed()
+    .setTitle('Membre Exclu')
+    .setThumbnail(member.user.displayAvatarURL())
+    .addField('Utilisateur exclu', member)
+    .addField('Exclu par', message.author)
+    .addField('Raison', reason)
+    .setFooter('Pour toute erreur d\'exclusion, contactez 4_4ck3r#4918', client.user.displayAvatarURL())
+    .setTimestamp())
 
 }
 
