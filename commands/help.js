@@ -9,7 +9,7 @@ module.exports.run = async (client, message, args) => {
     .setDescription(`**Prefixe:** ${config.prefix}\n**Code Language:** NodeJs\n**Dev by:** 4_4ck3r#4918`)
     .addField('__Admin Commands__', 'say\nsayEmbed\nclear\nnuke\nbanList\nban\nkick', true)
     .addField('__Other__', 'help\nping\nuser-info\nserver-info', true)
-    .addField('__Secret__', '1 commande secrète est disponible.')
+    .addField('__Secret__', '1 commande secrète est disponible.', true)
     .setThumbnail(message.guild.iconURL())
     .setFooter('© Tous droits réservés'))
 }
