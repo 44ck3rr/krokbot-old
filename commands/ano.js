@@ -3,14 +3,16 @@ const Discord = require('discord.js');
 module.exports.run = async (client, message, args) => {
     const anoMsg = args.join(" ");
     if(message.author.bot) return
-    const anoAuthor = message.author.id()
+//    const anoAuthor = message.author.id()
     message.delete();
 
+/*
     const anoLogsMsg = new Discord.MessageEmbed()
     .setAuthor(anoAuthor)
     .setTitle(`Message anonyme de ${anoAuthor}`)
     .setDescription(anoMsg)
-    .setTimestamp() 
+    .setTimestamp()
+*/
 
     const anoEmbed = new Discord.MessageEmbed()
     .setTitle('Message anonyme !')
@@ -21,7 +23,7 @@ module.exports.run = async (client, message, args) => {
     let anoLogs = client.channels.cache.get('876783871620939816')
 
     anoChannel.send(anoEmbed)
-    anoLogs.send(anoLogsMsg)
+//    anoLogs.send(anoLogsMsg)
 
 }
 
