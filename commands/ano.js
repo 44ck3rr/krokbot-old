@@ -3,6 +3,7 @@ const Discord = require('discord.js');
 module.exports.run = async (client, message, args) => {
     const anoMsg = args.join(" ");
     if(message.author.bot) return
+    if(args[1] == '') return message.channels.send('Aucun message indiquer')
 //    const anoAuthor = message.author.id()
     message.delete();
 
