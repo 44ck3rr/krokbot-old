@@ -11,7 +11,7 @@ module.exports.run = async (client, message, args) => {
     .addField('__Other__', 'help\nping\nuser-info\nserver-info', true)
     .addField('__Secret__', '1 commande secrète est disponible.', true)
     .setThumbnail(message.guild.iconURL())
-    .setFooter(`${message.author.displayName()} - © Tous droits réservés`, message.author.displayAvatarURL()))
+    .setFooter(`${message.author.tag()} - © Tous droits réservés`, message.author.displayAvatarURL()))
 }
 
 module.exports.config = {
