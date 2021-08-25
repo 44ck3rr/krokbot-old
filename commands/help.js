@@ -12,7 +12,6 @@ module.exports.run = async (client, message, args) => {
     .setThumbnail(message.guild.iconURL())
     .setFooter(`${message.author.tag()} - © Tous droits réservés`, message.author.displayAvatarURL())
 
-    message.delete()
     message.channel.send(helpEmbed)
 }
 
