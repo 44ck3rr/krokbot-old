@@ -4,9 +4,6 @@ const config = require('./config.json')
 const prefix = config.prefix
 const fs = require('fs')
 
-const Taverne = client.getGuild('657697992958017591')
-const Macron = client.getGuild('880885506425098273')
-
 client.commands = new Discord.Collection();
 
 fs.readdir('./commands/', (err, files ) => {
