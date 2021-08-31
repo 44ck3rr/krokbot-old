@@ -45,31 +45,4 @@ client.on('ready', async () => {
     }, 5000)
 })
 
-client.on('guildMemberAdd', async (member) => {
-    if(Taverne) {
-        let welcomeChannel = client.channels.cache.get('676111418776354866')
-        welcomeChannel.send(`||${member.user}||`)
-        welcomeChannel.send(new Discord.MessageEmbed()
-        .setTitle('Nouvelle Autiste !')
-        .setDescription(`Bienvenue ${member.user} dans La Taverne des Autistes ! 🎉`))
-    
-
-        member.roles.add('676134492263677992')
-        member.roles.add('869020204238258227')
-        member.roles.add('869241779034132480')
-        member.roles.add('869204736233070612')
-    }
-    else return
-})
-
-client.on('guildMemberRemove', async (member) => {
-    if(Taverne) {
-        let leaveChannel = client.channels.cache.get('676135861078851628')
-        leaveChannel.send(new Discord.MessageEmbed()
-        .setTitle('Autiste en moin')
-        .setDescription(`${member.user.tag} a quitté notre taverne 😥. Ce n'est plus un autiste`))
-    }
-    else return
-})
-
 client.login(process.env.TOKEN);
