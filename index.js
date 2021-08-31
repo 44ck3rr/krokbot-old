@@ -4,8 +4,8 @@ const config = require('./config.json')
 const prefix = config.prefix
 const fs = require('fs')
 
-const Taverne = client.guilds.cache.get('657697992958017591')
-const Macron = client.guilds.cache.get('880885506425098273')
+const Taverne = client.getGuild('657697992958017591')
+const Macron = client.getGuild('880885506425098273')
 
 client.commands = new Discord.Collection();
 
@@ -69,6 +69,7 @@ client.on('guildMemberRemove', async (member) => {
         .setTitle('Autiste en moin')
         .setDescription(`${member.user.tag} a quitté notre taverne 😥. Ce n'est plus un autiste`))
     }
+    else return
 })
 
 client.login(process.env.TOKEN);
