@@ -4,6 +4,9 @@ const config = require('./config.json')
 const prefix = config.prefix
 const fs = require('fs')
 
+const Taverne = client.guilds.cache.get('657697992958017591')
+const Macron = client.guilds.cache.get('880885506425098273')
+
 client.commands = new Discord.Collection();
 
 fs.readdir('./commands/', (err, files ) => {
@@ -43,23 +46,29 @@ client.on('ready', async () => {
 })
 
 client.on('guildMemberAdd', async (member) => {
-    let welcomeChannel = client.channels.cache.get('676111418776354866')
-    welcomeChannel.send(`||${member.user}||`)
-    welcomeChannel.send(new Discord.MessageEmbed()
-    .setTitle('Nouvelle Autiste !')
-    .setDescription(`Bienvenue ${member.user} dans La Taverne des Autistes ! 🎉`))
+    if(Taverne) {
+        let welcomeChannel = client.channels.cache.get('676111418776354866')
+        welcomeChannel.send(`||${member.user}||`)
+        welcomeChannel.send(new Discord.MessageEmbed()
+        .setTitle('Nouvelle Autiste !')
+        .setDescription(`Bienvenue ${member.user} dans La Taverne des Autistes ! 🎉`))
+    
 
-    member.roles.add('676134492263677992')
-    member.roles.add('869020204238258227')
-    member.roles.add('869241779034132480')
-    member.roles.add('869204736233070612')
+        member.roles.add('676134492263677992')
+        member.roles.add('869020204238258227')
+        member.roles.add('869241779034132480')
+        member.roles.add('869204736233070612')
+    }
+    else return
 })
 
 client.on('guildMemberRemove', async (member) => {
-    let leaveChannel = client.channels.cache.get('676135861078851628')
-    leaveChannel.send(new Discord.MessageEmbed()
-    .setTitle('Autiste en moin')
-    .setDescription(`${member.user.tag} a quitté notre taverne 😥. Ce n'est plus un autiste`))
+    if(Taverne) {
+        let leaveChannel = client.channels.cache.get('676135861078851628')
+        leaveChannel.send(new Discord.MessageEmbed()
+        .setTitle('Autiste en moin')
+        .setDescription(`${member.user.tag} a quitté notre taverne 😥. Ce n'est plus un autiste`))
+    }
 })
 
 client.login(process.env.TOKEN);
