@@ -30,6 +30,8 @@ client.on('message', async message => {
 })
 
 client.on('ready', async () => {
+    const db = require('quick.db')
+    
     console.log(`Connecté en tant que ${client.user.tag} - (${client.user.id})`);
     let statuses = [
         'Dev by 4_4ck3r',
