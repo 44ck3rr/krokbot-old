@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client()
+//const db = require('quick.db')
 const config = require('./config.json')
 const prefix = config.prefix
 const fs = require('fs')
@@ -30,8 +31,6 @@ client.on('message', async message => {
 })
 
 client.on('ready', async () => {
-    const db = require('quick.db')
-    
     console.log(`Connecté en tant que ${client.user.tag} - (${client.user.id})`);
     let statuses = [
         'Dev by 4_4ck3r',
