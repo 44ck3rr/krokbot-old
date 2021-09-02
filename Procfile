@@ -1,2 +1,2 @@
 worker: node index.js
-web: npm i mongoose
+web: npm i quick.db
