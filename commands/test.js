@@ -1,4 +1,4 @@
-const db = require('quick.db')
+/*const db = require('quick.db')
 const Discord = require('discord.js')
 const economy = new db.table('Economy')
 
@@ -11,3 +11,4 @@ module.exports.run = async (client, message, args) => {
 module.exports.config = {
     name: 'test'
 }
+*/
