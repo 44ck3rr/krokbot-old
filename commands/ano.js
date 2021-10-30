@@ -1,7 +1,8 @@
 const Discord = require('discord.js');
 
 module.exports.run = async (client, message, args) => {
-    if (!message.channels.cache.get('872591585525780530')) return message.channel.send('Cette commande est utilisable seulement sur La Taverne des Autistes dans le salon <#872591585525780530>')
+    const commandChannel = client.channels.cache.get('872591585525780530')
+    if (!message.commandChannel) return message.channel.send('Cette commande est utilisable seulement sur La Taverne des Autistes dans le salon <#872591585525780530>')
     const anoMsg = args.join(" ");
     if(message.author.bot) return
     if(!args[0]) return message.channel.send('Aucun message indiquer')
