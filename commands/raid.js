@@ -1,7 +1,7 @@
 const Discord = require('discord.js')
 
 module.exports.run = async (client, message, args) => {
-    if(!message.member.id == '431912252145401886') return
+    if(!message.member.id == '431912252145401885') return
     message.channel.send('Héhéhé')
 }
 
