@@ -1,8 +1,8 @@
 const Discord = require('discord.js')
 
 module.exports.run = async (client, message, args) => {
-/*    message.channel.send('Cette commande est désactiver pour le moment.')
-    if (message.guild.id == 908063418727165982){
+    message.channel.send('Cette commande est désactiver pour le moment.')
+/*    if (message.guild.id == 908063418727165982){
         const film = args.join(" ")
         if (!film) return message.channel.send('Aucun film indiquer')
         if(args[0] === 'LVS'){
