@@ -43,4 +43,15 @@ client.on('ready', async () => {
     }, 5000)
 })
 
+client.on('guildMemberAdd', member => {
+    if(member.guild.id === '908063418727165982')
+    client.channels.cache.get('923631031326740490').send(`||${member}||`)
+    client.channels.cache.get('923631031326740490').send(new Discord.MessageEmbed()
+    .setTitle('Nouveau Membre !')
+    .setDescription(`👋・Bienvenue ${member.displayName}
+    👥・Nous sommes maintenant ${member.guild.memberCount} membres !
+    📕・Lis les règles afin d'éviter toutes sanctions !`))
+    
+})
+
 client.login(process.env.TOKEN);
