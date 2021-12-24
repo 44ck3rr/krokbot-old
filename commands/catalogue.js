@@ -19,7 +19,9 @@ module.exports.run = async (client, message, args) => {
         🟠・__\`Dragons\`__ (1, 2, Retrouvailles)
         🟢・__\`LVS\`__ (La vie scolaire)
         🟢・__\`SMF\`__ (Spider-Man: Far From Home)
-        🔴・__\`SMN\`__ (Spider-Man: No Way Home)`)
+        🔴・__\`SMN\`__ (Spider-Man: No Way Home)
+        🟢・__\`Afond\`__ (A fond)
+        🟢・__\`FastHS\`__ (Fast & Furious: Hobbs & Shaw)`)
         .setColor('#FF8000'))
     }
     else message.channel.send('Commande seulement utilisable sur KrokCine !')
