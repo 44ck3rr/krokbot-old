@@ -59,7 +59,8 @@ module.exports.run = async (client, message, args) => {
         }
         else message.channel.send(`Ce film n'est pas dans notre catalogue.`)
     }
-    else message.channel.send('Commande seulement utilisable sur KrokCine !')*/
+    else message.channel.send(new Discord.MessageEmbed()
+    .setDescription('Commande seulement utilisable sur [KrokCine](https://discord.gg/E4KSjhv8WR) !'))*/
 }
 
 module.exports.config = {
