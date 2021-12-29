@@ -1,11 +1,8 @@
 const Discord = require('discord.js')
 
 module.exports.run = async (client, message, args) => {
-    if(process.env.LOCKFILM === YES){
-        message.channel.send('Cette commande est désactiver pour le moment.')
-    }
-    else{
-        if (message.guild.id == 908063418727165982){
+    message.channel.send('Cette commande est désactiver pour le moment.')
+/*    if (message.guild.id == 908063418727165982){
         const film = args.join(" ")
         if (!film) return message.channel.send('Aucun film indiquer')
         if(args[0] === 'LVS'){
@@ -63,10 +60,7 @@ module.exports.run = async (client, message, args) => {
         else message.channel.send(`Ce film n'est pas dans notre catalogue.`)
     }
     else message.channel.send(new Discord.MessageEmbed()
-    .setDescription('Commande seulement utilisable sur [KrokCine](https://discord.gg/E4KSjhv8WR) !'))
-    }
-    
-    
+    .setDescription('Commande seulement utilisable sur [KrokCine](https://discord.gg/E4KSjhv8WR) !'))*/
 }
 
 module.exports.config = {
