@@ -25,7 +25,7 @@ module.exports.run = async (client, message, args) => {
         🟢・__\`Afond\`__ ([A fond](https://www.youtube.com/watch?v=Hh29AkftLn8))`)
         .addField(`_ _`, `
         🟢・__\`FastHS\`__ ([Fast & Furious: Hobbs & Shaw](https://www.youtube.com/watch?v=NfCiX81lcDU))
-        🟠・__\`Venom\`__ ([1](https://www.youtube.com/watch?v=Pw9ZvTicmIg), [2](https://www.youtube.com/watch?v=eUkslWrf1Ds))
+        🟢・__\`Venom\`__ ([1](https://www.youtube.com/watch?v=Pw9ZvTicmIg), [2](https://www.youtube.com/watch?v=eUkslWrf1Ds))
         🔴・__\`BlackWidow\`__ ([Black Widow](https://www.youtube.com/watch?v=4l99M0zOEaA))
         🔴・__\`Avengers\`__ ([1](https://www.youtube.com/watch?v=b-kTeJhHOhc), [2](https://www.youtube.com/watch?v=Z0mPyiZ23x8), [3](https://www.youtube.com/watch?v=eIWs2IUr3Vs), [4](https://www.youtube.com/watch?v=wV-Q0o2OQjQ))
         🔴・__\`SpiderMan\`__ ([1](https://www.youtube.com/watch?v=rcVNkgpLhPM), [2](https://www.youtube.com/watch?v=4ZIekwOMhdU), [3](https://www.youtube.com/watch?v=qK7nMGNlHgk&t))
