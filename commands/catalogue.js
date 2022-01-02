@@ -22,7 +22,8 @@ module.exports.run = async (client, message, args) => {
         🟢・__\`SMF\`__ ([Spider-Man: Far From Home](https://www.youtube.com/watch?v=FguIk-SEkWI))
         🔴・__\`SMN\`__ ([Spider-Man: No Way Home](https://www.youtube.com/watch?v=7w_w10HVa54))
         🟢・__\`Afond\`__ ([A fond](https://www.youtube.com/watch?v=Hh29AkftLn8))
-        🟢・__\`FastHS\`__ ([Fast & Furious: Hobbs & Shaw](https://www.youtube.com/watch?v=NfCiX81lcDU))`)
+        🟢・__\`FastHS\`__ ([Fast & Furious: Hobbs & Shaw](https://www.youtube.com/watch?v=NfCiX81lcDU))
+        🔴・__\`Venom\`__ ([1](https://www.youtube.com/watch?v=Pw9ZvTicmIg), [2](https://www.youtube.com/watch?v=eUkslWrf1Ds))`)
         .setColor('#FF8000'))
     }
     else message.channel.send(new Discord.MessageEmbed()
