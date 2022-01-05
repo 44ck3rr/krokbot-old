@@ -9,7 +9,7 @@ module.exports.run = async (client, message, args) => {
     .setDescription(`**🏷・Prefixe:** Universelle\n**🗣・Code Language:** NodeJs\n**⚙・Dev by:** 4_4ck3r#4918`)
     .addField('🔰・__Admin Commands__', '`say`\n`sayEmbed`\n`clear`\n`nuke`\n`banList`\n`ban`\n`kick`', true)
     .addField('🔆・__Other__', '`help`\n`ping`\n`user-info`\n`server-info`\n`ano`', true)
-    .addField('🎥・__KrokCine__', '`film`\n`catalogue`', true)
+    .addField('🎥・__KrokCine__', '`film`\n`catalogue`\n`role`', true)
     .setThumbnail(message.guild.iconURL())
     .setFooter(`© Tous droits réservés`))
 }
