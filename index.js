@@ -52,6 +52,7 @@ client.on('guildMemberAdd', member => {
     👥・Nous sommes maintenant ${member.guild.memberCount} membres !
     📕・Lis les règles afin d'éviter toutes sanctions !`))
     client.channels.cache.get('923641625605980300').send(`${member} **Choisis tes roles.**`).then(sent => sent.delete({timeout: 5e3}))
+    client.channels.cache.get('908064712594444298').send(`${member} **Accès aux films.**`).then(sent => sent.delete({timeout: 5e3}))
 })
 
 client.login(process.env.TOKEN);
