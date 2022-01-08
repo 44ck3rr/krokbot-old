@@ -10,6 +10,7 @@
   "author": "4_4ck3r",
   "license": "ISC",
   "dependencies": {
+    "node": "^15.x",
     "@discordjs/opus": "^0.5.3",
     "discord-buttons": "^4.0.0",
     "discord.js": "^12.5.3",
